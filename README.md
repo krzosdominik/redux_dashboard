@@ -6,7 +6,7 @@ Dashboard App. Technologies: React, Redux, React-Bootstrap and JSON Placeholder 
 
 ### Online
 ```sh
-https://
+https://dashboard-krzosdominik.netlify.app/
 ```
 
 ### Prerequisites
