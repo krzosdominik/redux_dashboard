@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Container } from 'react-bootstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Main from './app/components/MainPage';
+import { AddUser, EditUser} from './app/components/UserManagement';
+import { getAllUsers } from './app/users/duck/operations';
+
+const App = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllUsers())
+    });
+
+    return (
+        <Container>
+            <header>
+                <h1>Dashboard</h1>
+            </header>
+            <Router>
+                <Switch>
+                    <Route exact path="/" component={Main} />
+                    <Route path="/user/add" component={AddUser} />
+                    <Route path="/user/:id" component={EditUser} />
+                </Switch>
+            </Router>
+        </Container>
+    );
 }
 
 export default App;
