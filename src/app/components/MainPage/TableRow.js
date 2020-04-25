@@ -5,14 +5,17 @@ import Popup from '../Popup';
 
 const TableRow = ({ id, name, username, email, city }) => {
     const [showPopup, setShowPopup] = useState(false);
-    const cells = [id, name, username, email, city];
 
     const handleDelete = () => setShowPopup(!showPopup);
 
     return (
         <>
             <tr>
-                {cells.map(item => <td key={item} className="align-middle">{item}</td>)}
+                <td>{id}</td>
+                <td>{name}</td>
+                <td>{username}</td>
+                <td>{email}</td>
+                <td>{city}</td>
                 <td>
                     <Link
                         href={`/user/${id}`}

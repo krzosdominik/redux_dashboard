@@ -24,7 +24,7 @@ const Table = () => {
             <tbody>
                 {users && users.map(({ id, name, username, email, address }) => (
                     <TableRow
-                        key={id}
+                        key={id + 2}
                         id={id}
                         name={name}
                         username={username ? username : ""}
@@ -32,7 +32,7 @@ const Table = () => {
                         city={address ? address.city : ""}
                     />
                 ))}
-                {!users.length && <TableMessage message="All users have been removed" />}
+                {!users.length && <TableMessage message="No data found" />}
             </tbody>
         </Tab>
     )
