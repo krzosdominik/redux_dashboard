@@ -24,7 +24,7 @@ const Table = () => {
             <tbody>
                 {users && users.map(({ id, name, username, email, address }) => (
                     <TableRow
-                        key={id + 2}
+                        key={id}
                         id={id}
                         name={name}
                         username={username ? username : ""}

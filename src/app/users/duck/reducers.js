@@ -1,6 +1,5 @@
 import types from './types';
 
-
 const INITIAL_STATE = {
     users: []
 }

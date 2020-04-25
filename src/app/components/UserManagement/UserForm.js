@@ -10,11 +10,12 @@ const UserForm = ({ name = "", email = "", onSubmit }) => {
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = event => {
+        const form = event.currentTarget;
         event.preventDefault();
         event.stopPropagation();
         setValidated(true);
-        
-        if (event.currentTarget.checkValidity() === true) {
+
+        if (form.checkValidity()) {
             onSubmit(userName, userEmail);
         };
     };
