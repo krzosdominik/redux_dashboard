@@ -32,7 +32,7 @@ const Table = () => {
                         city={address ? address.city : ""}
                     />
                 ))}
-                {!users.length && <TableMessage message="No data found" />}
+                {!users.length && <TableMessage message="All user have been removed" />}
             </tbody>
         </Tab>
     )
